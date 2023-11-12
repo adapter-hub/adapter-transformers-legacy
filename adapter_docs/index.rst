@@ -6,6 +6,12 @@
 AdapterHub Documentation
 ================================================
 
+.. warning::
+   This is the documentation of the legacy `adapter-transformers` library, which has been replaced by the new **Adapters library, found here:** `https://docs.adapterhub.ml <https://docs.adapterhub.ml>`_.
+
+   This documentation is kept for archival purposes, and the library will not be updated in the future.
+   Please use the new library for all active projects.
+
 *AdapterHub* is a framework simplifying the integration, training and usage of adapters and other efficient fine-tuning methods for Transformer-based language models.
 For a full list of currently implemented methods, see the `table in our repository <https://github.com/adapter-hub/adapter-transformers#implemented-methods>`_.
 
