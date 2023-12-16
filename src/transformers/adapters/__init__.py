@@ -18,9 +18,17 @@
 
 __version__ = "3.2.1"
 
+import warnings
 from typing import TYPE_CHECKING
 
 from ..utils import _LazyModule
+
+
+warnings.warn(
+    "The `adapter-transformers` package is deprecated and replaced by the `adapters` package. See"
+    " https://docs.adapterhub.ml/transitioning.html.",
+    FutureWarning,
+)
 
 
 _import_structure = {

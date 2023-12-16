@@ -16,13 +16,16 @@ limitations under the License.
 
 ## IMPORTANT NOTE
 
-This is the legacy codebase of the `adapter-transformers` library, which has been replaced by the new **Adapters library, found here: https://github.com/adapter-hub/adapters**.
+This is the legacy `adapter-transformers` library, which has been replaced by the new **Adapters library, found here: https://github.com/adapter-hub/adapters**.
+
+Install the new library via pip: `pip install adapters`.
 
 This repository is kept for archival purposes, and will not be updated in the future.
 Please use the new library for all active projects.
 
 The documentation of this library can be found at https://docs-legacy.adapterhub.ml.
 The documentation of the new _Adapters_ library can be found at https://docs.adapterhub.ml.
+For transitioning, please read: https://docs.adapterhub.ml/transitioning.html.
 
 ---
 

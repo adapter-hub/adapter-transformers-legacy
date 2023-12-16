@@ -112,13 +112,13 @@ _deps = [
     "faiss-cpu",
     "fastapi",
     "filelock",
-    "flake8>=3.8.3",
+    "flake8>=3.8.3,<6.0.0",
     "flax>=0.4.1",
     "ftfy",
     "fugashi>=1.0",
     "GitPython<3.1.19",
     "hf-doc-builder>=0.3.0",
-    "huggingface-hub>=0.11.0,<1.0",
+    "huggingface-hub>=0.11.0,<0.14.0",
     "importlib_metadata",
     "ipadic>=1.0.0,<2.0",
     "isort>=5.5.4",
@@ -432,7 +432,7 @@ install_requires = [
 
 setup(
     name="adapter-transformers",
-    version="3.2.1",
+    version="3.2.1.post0",
     author="Jonas Pfeiffer, Andreas Rücklé, Clifton Poth, Hannah Sterz, Leon Engländer, based on work by the HuggingFace team and community",
     author_email="pfeiffer@ukp.tu-darmstadt.de",
     description="A friendly fork of HuggingFace's Transformers, adding Adapters to PyTorch language models",
@@ -451,7 +451,7 @@ setup(
     python_requires=">=3.8.0",
     install_requires=install_requires,
     classifiers=[
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 7 - Inactive",
         "Intended Audience :: Developers",
         "Intended Audience :: Education",
         "Intended Audience :: Science/Research",
