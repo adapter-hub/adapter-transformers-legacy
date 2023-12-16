@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AdapterLayer &mdash; adapter-transformers  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Model Mixins" href="model_mixins.html" />
+    <link rel="prev" title="Adapter Modules" href="adapter_modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> adapter-transformers
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Adapter Training</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Adapter Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview and Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods.html">Adapter Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../method_combinations.html">Method Combinations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adapter_composition.html">Adapter Activation and Composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prediction_heads.html">Prediction Heads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embeddings.html">Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">Extending the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../transitioning.html">Transitioning from Earlier Versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Loading and Sharing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../loading.html">Loading Pre-Trained Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hub_contributing.html">Contributing Adapters to the Hub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface_hub.html">Integration with HuggingFace’s Model Hub</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Supported Models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_overview.html">Model Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/albert.html">ALBERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/auto.html">Auto Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/bart.html">BART</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/beit.html">Bidirectional Encoder representation from Image Transformers (BEiT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/bert.html">BERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/bert-generation.html">BertGeneration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/clip.html">CLIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/deberta.html">DeBERTa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/deberta_v2.html">DeBERTa-v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/distilbert.html">DistilBERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/encoderdecoder.html">Encoder Decoder Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/gpt2.html">OpenAI GPT2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/gptj.html">EleutherAI GPT-J-6B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/mbart.html">MBart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/roberta.html">RoBERTa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/t5.html">T5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/vit.html">Vision Transformer (ViT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/xlmroberta.html">XLM-RoBERTa</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Adapter-Related Classes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="adapter_config.html">Adapter Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_adapters_config.html">Model Adapters Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_modules.html">Adapter Modules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AdapterLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_mixins.html">Model Mixins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_training.html">Adapter Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_utils.html">Adapter Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to AdapterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/adding_adapter_methods.html">Adding Adapter Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/adding_adapters_to_a_model.html">Adding Adapters to a Model</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">adapter-transformers</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>AdapterLayer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/classes/adapter_layer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adapterlayer">
+<h1>AdapterLayer<a class="headerlink" href="#adapterlayer" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="transformers.AdapterLayer">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.</code><code class="sig-name descname">AdapterLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location_key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.AdapterLayer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="transformers.AdapterLayer.adapter_fusion">
+<code class="sig-name descname">adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">transformers.adapters.composition.Fuse</span></em>, <em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">input_tensor</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em>, <em class="sig-param"><span class="n">lvl</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.AdapterLayer.adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs adapter fusion with the given adapters for the given input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.AdapterLayer.adapter_layer_forward">
+<code class="sig-name descname">adapter_layer_forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">residual_input</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.AdapterLayer.adapter_layer_forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forward pass through the adapter layer.
+NOTE: This method should only be called if the calling module directly inherits from AdapterLayer. Otherwise,
+call the regular forward() method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hidden_states</strong> (<em>torch.Tensor</em>) – Input hidden states to the adapter layer.</p></li>
+<li><p><strong>residual_input</strong> (<em>torch.Tensor</em>) – Residual input to the adapter layer.</p></li>
+<li><p><strong>layer_norm</strong> (<em>torch.nn.Module</em>) – Transformer layer normalization module to be used by the adapter layer.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Output hidden states of the adapter layer.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.AdapterLayer.adapter_parallel">
+<code class="sig-name descname">adapter_parallel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">transformers.adapters.composition.Parallel</span></em>, <em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">input_tensor</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em>, <em class="sig-param"><span class="n">lvl</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.AdapterLayer.adapter_parallel" title="Permalink to this definition">¶</a></dt>
+<dd><p>For parallel execution of the adapters on the same input. This means that the input is repeated N times before
+feeding it to the adapters (where N is the number of adapters).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.AdapterLayer.adapter_split">
+<code class="sig-name descname">adapter_split</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">transformers.adapters.composition.Split</span></em>, <em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">input_tensor</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em>, <em class="sig-param"><span class="n">lvl</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.AdapterLayer.adapter_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits the given input between the given adapters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.AdapterLayer.adapter_stack">
+<code class="sig-name descname">adapter_stack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">transformers.adapters.composition.Stack</span></em>, <em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">input_tensor</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em>, <em class="sig-param"><span class="n">lvl</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.AdapterLayer.adapter_stack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forwards the given input through the given stack of adapters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.AdapterLayer.add_fusion_layer">
+<code class="sig-name descname">add_fusion_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>List<span class="p">, </span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.AdapterLayer.add_fusion_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>See BertModel.add_fusion_layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.AdapterLayer.enable_adapters">
+<code class="sig-name descname">enable_adapters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">transformers.adapters.composition.AdapterCompositionBlock</span></em>, <em class="sig-param"><span class="n">unfreeze_adapters</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">unfreeze_fusion</span><span class="p">:</span> <span class="n">bool</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.AdapterLayer.enable_adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unfreezes a given list of adapters, the adapter fusion layer, or both</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_names</strong> – names of adapters to unfreeze (or names of adapters part of the fusion layer to unfreeze)</p></li>
+<li><p><strong>unfreeze_adapters</strong> – whether the adapter weights should be activated</p></li>
+<li><p><strong>unfreeze_fusion</strong> – whether the adapter fusion layer for the given adapters should be activated</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.AdapterLayer.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">residual_input</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.AdapterLayer.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forward pass through the adapter layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hidden_states</strong> (<em>torch.Tensor</em>) – Input hidden states to the adapter layer.</p></li>
+<li><p><strong>residual_input</strong> (<em>torch.Tensor</em>) – Residual input to the adapter layer.</p></li>
+<li><p><strong>layer_norm</strong> (<em>torch.nn.Module</em>) – Transformer layer normalization module to be used by the adapter layer.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Output hidden states of the adapter layer.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="model_mixins.html" class="btn btn-neutral float-right" title="Model Mixins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="adapter_modules.html" class="btn btn-neutral float-left" title="Adapter Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020-2022, Adapter-Hub Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <!--- IMPORTANT: This file has modifications compared to the snippet on the documentation page! -->
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="adapter_layer.html">master</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

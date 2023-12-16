@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adapter Modules &mdash; adapter-transformers  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AdapterLayer" href="adapter_layer.html" />
+    <link rel="prev" title="Model Adapters Config" href="model_adapters_config.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> adapter-transformers
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Adapter Training</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Adapter Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview and Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods.html">Adapter Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../method_combinations.html">Method Combinations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adapter_composition.html">Adapter Activation and Composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prediction_heads.html">Prediction Heads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embeddings.html">Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">Extending the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../transitioning.html">Transitioning from Earlier Versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Loading and Sharing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../loading.html">Loading Pre-Trained Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hub_contributing.html">Contributing Adapters to the Hub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface_hub.html">Integration with HuggingFace’s Model Hub</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Supported Models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_overview.html">Model Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/albert.html">ALBERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/auto.html">Auto Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/bart.html">BART</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/beit.html">Bidirectional Encoder representation from Image Transformers (BEiT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/bert.html">BERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/bert-generation.html">BertGeneration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/clip.html">CLIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/deberta.html">DeBERTa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/deberta_v2.html">DeBERTa-v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/distilbert.html">DistilBERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/encoderdecoder.html">Encoder Decoder Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/gpt2.html">OpenAI GPT2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/gptj.html">EleutherAI GPT-J-6B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/mbart.html">MBart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/roberta.html">RoBERTa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/t5.html">T5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/vit.html">Vision Transformer (ViT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/xlmroberta.html">XLM-RoBERTa</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Adapter-Related Classes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="adapter_config.html">Adapter Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_adapters_config.html">Model Adapters Config</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Adapter Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_layer.html">AdapterLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_mixins.html">Model Mixins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_training.html">Adapter Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_utils.html">Adapter Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to AdapterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/adding_adapter_methods.html">Adding Adapter Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/adding_adapters_to_a_model.html">Adding Adapters to a Model</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">adapter-transformers</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Adapter Modules</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/classes/adapter_modules.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adapter-modules">
+<h1>Adapter Modules<a class="headerlink" href="#adapter-modules" title="Permalink to this headline">¶</a></h1>
+<p>Classes implementing task and language adapters.</p>
+<span class="target" id="module-transformers.adapters.modeling"></span><dl class="py class">
+<dt id="transformers.adapters.modeling.Activation_Function_Class">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">Activation_Function_Class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hidden_act</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.Activation_Function_Class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation of various activation function.</p>
+<dl class="py method">
+<dt id="transformers.adapters.modeling.Activation_Function_Class.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.Activation_Function_Class.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="transformers.adapters.modeling.Adapter">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">Adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span></em>, <em class="sig-param"><span class="n">input_size</span></em>, <em class="sig-param"><span class="n">down_sample</span></em>, <em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">transformers.adapters.configuration.AdapterConfig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.Adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation of a sequential bottleneck adapter block.</p>
+<dl class="py method">
+<dt id="transformers.adapters.modeling.Adapter.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">residual_input</span></em>, <em class="sig-param"><span class="n">output_gating</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.Adapter.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.adapters.modeling.Adapter.init_bert_weights">
+<em class="property">static </em><code class="sig-name descname">init_bert_weights</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.Adapter.init_bert_weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the weights.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.adapters.modeling.Adapter.post_forward">
+<code class="sig-name descname">post_forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">input_hidden_states</span></em>, <em class="sig-param"><span class="n">input_tensor</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.Adapter.post_forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs computations after the forward pass of the adapter block(s). This e.g. includes applying the residual
+connection and layer norm if configured in this way.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hidden_states</strong> – The hidden states outputted by the adapter block(s).</p></li>
+<li><p><strong>input_hidden_states</strong> – Residual connection before the adapter block(s).</p></li>
+<li><p><strong>input_tensor</strong> – Residual connection before the Transformer FFN/ attention layer.</p></li>
+<li><p><strong>layer_norm</strong> – Transformer LayerNorm.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The modified hidden states.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.adapters.modeling.Adapter.pre_forward">
+<code class="sig-name descname">pre_forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">input_tensor</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em>, <em class="sig-param"><span class="n">fusion_config</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.Adapter.pre_forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the hidden_states, query (for Fusion), and residual connection according to the set configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_config</strong> – config file according to what the parameters are passed</p></li>
+<li><p><strong>hidden_states</strong> – output of previous layer</p></li>
+<li><p><strong>input_tensor</strong> – residual connection before FFN</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: hidden_states, query, residual</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="transformers.adapters.modeling.BertFusion">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">BertFusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">transformers.adapters.configuration.AdapterFusionConfig</span></em>, <em class="sig-param"><span class="n">dense_size</span></em>, <em class="sig-param"><span class="n">attention_probs_dropout_prob</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.BertFusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation of an AdapterFusion block.</p>
+<dl class="py method">
+<dt id="transformers.adapters.modeling.BertFusion.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">residual</span></em>, <em class="sig-param"><span class="n">output_attentions</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.BertFusion.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="transformers.adapters.modeling.GLOWCouplingBlock">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">GLOWCouplingBlock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims_in</span></em>, <em class="sig-param"><span class="n">dims_c</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">non_linearity</span><span class="o">=</span><span class="default_value">'relu'</span></em>, <em class="sig-param"><span class="n">reduction_factor</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">clamp</span><span class="o">=</span><span class="default_value">5.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.GLOWCouplingBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coupling Block following the GLOW design. The only difference to the RealNVP coupling blocks, is the fact that it
+uses a single subnetwork to jointly predict [s_i, t_i], instead of two separate subnetworks. This reduces
+computational cost and speeds up learning. clamp: Soft clamping for the multiplicative component. The amplification
+or attenuation of each input dimension can be at most ±exp(clamp).</p>
+<dl class="py method">
+<dt id="transformers.adapters.modeling.GLOWCouplingBlock.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">c</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">rev</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.GLOWCouplingBlock.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="transformers.adapters.modeling.NICECouplingBlock">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">NICECouplingBlock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims_in</span></em>, <em class="sig-param"><span class="n">dims_c</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">non_linearity</span><span class="o">=</span><span class="default_value">'relu'</span></em>, <em class="sig-param"><span class="n">reduction_factor</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.NICECouplingBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coupling Block following the NICE design.</p>
+<dl class="py method">
+<dt id="transformers.adapters.modeling.NICECouplingBlock.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">c</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">rev</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.NICECouplingBlock.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="transformers.adapters.modeling.PHMLayer">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">PHMLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">in_features</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">out_features</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">position</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.PHMLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is adapted from the compacter implementation at <a class="reference external" href="https://github.com/rabeehk/compacter">https://github.com/rabeehk/compacter</a></p>
+<dl class="py method">
+<dt id="transformers.adapters.modeling.PHMLayer.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">torch.Tensor</span></em><span class="sig-paren">)</span> &#x2192; torch.Tensor<a class="headerlink" href="#transformers.adapters.modeling.PHMLayer.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.adapters.modeling.PHMLayer.set_phm_rule">
+<code class="sig-name descname">set_phm_rule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phm_rule</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">phm_rule_left</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">phm_rule_right</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.PHMLayer.set_phm_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>If factorized_phm_rules is set, phm_rule is a tuple, showing the left and right phm rules, and if this is not
+set, this is showing the phm_rule.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="transformers.adapters.modeling.ParallelAdapter">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">ParallelAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span></em>, <em class="sig-param"><span class="n">input_size</span></em>, <em class="sig-param"><span class="n">down_sample</span></em>, <em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">transformers.adapters.configuration.AdapterConfig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.ParallelAdapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation of a parallel bottleneck adapter block.</p>
+<dl class="py method">
+<dt id="transformers.adapters.modeling.ParallelAdapter.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">residual_input</span></em>, <em class="sig-param"><span class="n">output_gating</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.ParallelAdapter.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.adapters.modeling.ParallelAdapter.post_forward">
+<code class="sig-name descname">post_forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">input_hidden_states</span></em>, <em class="sig-param"><span class="n">input_tensor</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.ParallelAdapter.post_forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs computations after the forward pass of the adapter block(s). This e.g. includes applying the residual
+connection and layer norm if configured in this way.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hidden_states</strong> – The hidden states outputted by the adapter block(s).</p></li>
+<li><p><strong>input_hidden_states</strong> – Residual connection before the adapter block(s).</p></li>
+<li><p><strong>input_tensor</strong> – Residual connection before the Transformer FFN/ attention layer.</p></li>
+<li><p><strong>layer_norm</strong> – Transformer LayerNorm.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The modified hidden states.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.adapters.modeling.ParallelAdapter.pre_forward">
+<code class="sig-name descname">pre_forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hidden_states</span></em>, <em class="sig-param"><span class="n">input_tensor</span></em>, <em class="sig-param"><span class="n">layer_norm</span></em>, <em class="sig-param"><span class="n">fusion_config</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.ParallelAdapter.pre_forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the hidden_states, query (for Fusion), and residual connection according to the set configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_config</strong> – config file according to what the parameters are passed</p></li>
+<li><p><strong>hidden_states</strong> – output of previous layer</p></li>
+<li><p><strong>input_tensor</strong> – residual connection before FFN</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: hidden_states, query, residual</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="transformers.adapters.modeling.init_W">
+<code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">init_W</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">W_left</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">W_right</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">W</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.init_W" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the weights for the compacter module or the shared parameters</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="transformers.adapters.modeling.init_shared_parameters">
+<code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">init_shared_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">in_features</span></em>, <em class="sig-param"><span class="n">device</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.init_shared_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and initialize the parameters shared by all compacter modules</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="transformers.adapters.modeling.kronecker_product">
+<code class="sig-prename descclassname">transformers.adapters.modeling.</code><code class="sig-name descname">kronecker_product</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.adapters.modeling.kronecker_product" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copied from rabeehk/compacter seq2seq/hypercomplex/kronecker.py</p>
+<p>Kronecker product of matrices a and b with leading batch dimensions. Batch dimensions are broadcast. The number of
+them mush :type a: torch.Tensor :type b: torch.Tensor :rtype: torch.Tensor</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adapter_layer.html" class="btn btn-neutral float-right" title="AdapterLayer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="model_adapters_config.html" class="btn btn-neutral float-left" title="Model Adapters Config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020-2022, Adapter-Hub Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <!--- IMPORTANT: This file has modifications compared to the snippet on the documentation page! -->
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="adapter_modules.html">master</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

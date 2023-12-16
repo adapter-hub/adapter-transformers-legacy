@@ -1,0 +1,1899 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CLIP &mdash; adapter-transformers  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DeBERTa" href="deberta.html" />
+    <link rel="prev" title="BertGeneration" href="bert-generation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> adapter-transformers
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Adapter Training</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Adapter Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview and Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../methods.html">Adapter Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../method_combinations.html">Method Combinations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../adapter_composition.html">Adapter Activation and Composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../prediction_heads.html">Prediction Heads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../embeddings.html">Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending.html">Extending the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../transitioning.html">Transitioning from Earlier Versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Loading and Sharing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../loading.html">Loading Pre-Trained Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hub_contributing.html">Contributing Adapters to the Hub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../huggingface_hub.html">Integration with HuggingFace’s Model Hub</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Supported Models</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../model_overview.html">Model Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="albert.html">ALBERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto.html">Auto Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bart.html">BART</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beit.html">Bidirectional Encoder representation from Image Transformers (BEiT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bert.html">BERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bert-generation.html">BertGeneration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CLIP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cliptextmodel">CLIPTextModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clipvisionmodel">CLIPVisionModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clipmodel">CLIPModel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deberta.html">DeBERTa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deberta_v2.html">DeBERTa-v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distilbert.html">DistilBERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encoderdecoder.html">Encoder Decoder Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpt2.html">OpenAI GPT2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gptj.html">EleutherAI GPT-J-6B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mbart.html">MBart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roberta.html">RoBERTa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="t5.html">T5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vit.html">Vision Transformer (ViT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlmroberta.html">XLM-RoBERTa</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Adapter-Related Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adapter_config.html">Adapter Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model_adapters_config.html">Model Adapters Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adapter_modules.html">Adapter Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adapter_layer.html">AdapterLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model_mixins.html">Model Mixins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adapter_training.html">Adapter Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adapter_utils.html">Adapter Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing to AdapterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/adding_adapter_methods.html">Adding Adapter Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/adding_adapters_to_a_model.html">Adding Adapters to a Model</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">adapter-transformers</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>CLIP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/classes/models/clip.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="clip">
+<h1>CLIP<a class="headerlink" href="#clip" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>Adapter implementation notes:</dt><dd><ul class="simple">
+<li><p>CLIP consists of two separate Transformer encoder models, a ViT-style Transformer for visual features and a language model for textual features. Both encoders can be fitted with adapters. As usual, the <code class="docutils literal notranslate"><span class="pre">leave_out</span></code> parameter can be used to specify the layers in which adapters should be added. For CLIP, layer IDs are counted globally across both encoders, starting from the text encoder. I.e., for a CLIP model with 12 layers in each Transformer encoder, the text encoder will have IDs 0-11 and the vision encoder will have IDs 12-23.</p></li>
+<li><p>As CLIP does not come with pre-supported task-specific prediction heads, there is currently no <code class="docutils literal notranslate"><span class="pre">CLIPAdapterModel</span></code> class. Use <code class="docutils literal notranslate"><span class="pre">CLIPModel</span></code> instead.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<p>The CLIP model was proposed in <a class="reference external" href="https://arxiv.org/abs/2103.00020">Learning Transferable Visual Models From Natural Language Supervision</a> by Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
+Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever. CLIP
+(Contrastive Language-Image Pre-Training) is a neural network trained on a variety of (image, text) pairs. It can be
+instructed in natural language to predict the most relevant text snippet, given an image, without directly optimizing
+for the task, similarly to the zero-shot capabilities of GPT-2 and 3.</p>
+<p>The abstract from the paper is the following:</p>
+<p><em>State-of-the-art computer vision systems are trained to predict a fixed set of predetermined object categories. This
+restricted form of supervision limits their generality and usability since additional labeled data is needed to specify
+any other visual concept. Learning directly from raw text about images is a promising alternative which leverages a
+much broader source of supervision. We demonstrate that the simple pre-training task of predicting which caption goes
+with which image is an efficient and scalable way to learn SOTA image representations from scratch on a dataset of 400
+million (image, text) pairs collected from the internet. After pre-training, natural language is used to reference
+learned visual concepts (or describe new ones) enabling zero-shot transfer of the model to downstream tasks. We study
+the performance of this approach by benchmarking on over 30 different existing computer vision datasets, spanning tasks
+such as OCR, action recognition in videos, geo-localization, and many types of fine-grained object classification. The
+model transfers non-trivially to most tasks and is often competitive with a fully supervised baseline without the need
+for any dataset specific training. For instance, we match the accuracy of the original ResNet-50 on ImageNet zero-shot
+without needing to use any of the 1.28 million training examples it was trained on. We release our code and pre-trained
+model weights at this https URL.</em></p>
+<div class="section" id="cliptextmodel">
+<h2>CLIPTextModel<a class="headerlink" href="#cliptextmodel" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="transformers.CLIPTextModel">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.</code><code class="sig-name descname">CLIPTextModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">transformers.models.clip.configuration_clip.CLIPTextConfig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>The text model from CLIP without any head or projection on top.
+This model inherits from [<cite>PreTrainedModel</cite>]. Check the superclass documentation for the generic methods the
+library implements for all its model (such as downloading or saving, resizing the input embeddings, pruning heads
+etc.)</p>
+<p>This model is also a PyTorch [torch.nn.Module](<a class="reference external" href="https://pytorch.org/docs/stable/nn.html#torch.nn.Module">https://pytorch.org/docs/stable/nn.html#torch.nn.Module</a>) subclass.
+Use it as a regular PyTorch Module and refer to the PyTorch documentation for all matter related to general usage
+and behavior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> ([<cite>CLIPConfig</cite>]) – Model configuration class with all the parameters of the model.
+Initializing with a config file does not load the weights associated with the model, only the
+configuration. Check out the [<cite>~PreTrainedModel.from_pretrained</cite>] method to load the model weights.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.adapter_summary">
+<code class="sig-name descname">adapter_summary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">as_dict</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>dict<span class="p">]</span><a class="headerlink" href="#transformers.CLIPTextModel.adapter_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string summary of all adapters currently added to the model. Each entry in the summary table has the
+following attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>name: the name of the adapter</p></li>
+<li><p>architecture: the architectural base of the adapter</p></li>
+<li><p>#param: the number of parameters of the adapter</p></li>
+<li><p>%param: the number of parameters of the adapter relative to the full model</p></li>
+<li><p>active: whether the adapter is active</p></li>
+<li><p>train: whether the adapter weights are enabled for training</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.add_adapter">
+<code class="sig-name descname">add_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite_ok</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.add_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new adapter module of the specified type to the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter module to be added.</p></li>
+<li><p><strong>config</strong> (<em>str</em><em> or </em><em>dict</em><em> or </em><a class="reference internal" href="../adapter_config.html#transformers.AdapterConfigBase" title="transformers.AdapterConfigBase"><em>AdapterConfigBase</em></a><em>, </em><em>optional</em>) – <p>The adapter configuration, can be either:</p>
+<ul>
+<li><p>the string identifier of a pre-defined configuration dictionary</p></li>
+<li><p>a configuration dictionary specifying the full config</p></li>
+<li><p>if not given, the default configuration for this adapter type will be used</p></li>
+</ul>
+</p></li>
+<li><p><strong>overwrite_ok</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overwrite an adapter with the same name if it exists. By default (False), an</p></li>
+<li><p><strong>is thrown. set_active</strong> (<em>exception</em>) – Set the adapter to be the active one. By default (False),</p></li>
+<li><p><strong>adapter is added but not activated.</strong> (<em>the</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.add_adapter_fusion">
+<code class="sig-name descname">add_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>transformers.adapters.composition.Fuse<span class="p">, </span>list<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite_ok</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.add_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds AdapterFusion to the model with alll the necessary configurations and weight initializations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_names</strong> (<em>Fuse</em><em> or </em><em>list</em><em> or </em><em>str</em>) – <p>AdapterFusion layer to add. Can be either:</p>
+<ul>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">Fuse</span></code> composition block</p></li>
+<li><p>a list of adapter names to fuse</p></li>
+<li><p>a comma-separated string of adapter names to fuse</p></li>
+</ul>
+</p></li>
+<li><p><strong>config</strong> (<em>str</em><em> or </em><em>dict</em>) – <p>adapter fusion configuration, can be either:</p>
+<ul>
+<li><p>a string identifying a pre-defined adapter fusion configuration</p></li>
+<li><p>a dictionary representing the adapter fusion configuration</p></li>
+<li><p>the path to a file containing the adapter fusion configuration</p></li>
+</ul>
+</p></li>
+<li><p><strong>overwrite_ok</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overwrite an AdapterFusion layer with the same name if it exists. By default (False), an exception is
+thrown.</p></li>
+<li><p><strong>set_active</strong> (<em>bool</em><em>, </em><em>optional</em>) – Activate the added AdapterFusion. By default (False), the AdapterFusion is added but not activated.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.add_embeddings">
+<code class="sig-name descname">add_embeddings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">tokenizer</span></em>, <em class="sig-param"><span class="n">reference_embedding</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reference_tokenizer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">embedding_dim</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.add_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new embedding to the model. If a reference embedding and reference tokenizer are provided tokens in the
+present in both tokenizers are initialized to the embedding in the reference_embedding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – the name of the embedding</p></li>
+<li><p><strong>tokenizer</strong> – the tokenizer determining the vocab of the embedding</p></li>
+<li><p><strong>reference_embedding</strong> – the reference embedding to use for initializing the embeddings of tokens present in the newly created
+embedding</p></li>
+<li><p><strong>reference_tokenizer</strong> – the tokenizer providing the vocab for the reference embedding</p></li>
+<li><p><strong>embedding_dim</strong> – the dimension of the embeddings (if None the embedding_size, or if this doesn’t exist the hidden_size,
+from the config is used)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.add_invertible_adapter">
+<code class="sig-name descname">add_invertible_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.add_invertible_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an invertible adapter module for the adapter with the given name. If the given adapter does not specify an
+invertible adapter config, this method does nothing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter for which to add an invertible adapter module.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.apply_to_adapter_layers">
+<code class="sig-name descname">apply_to_adapter_layers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.apply_to_adapter_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a function to all adapter layers of the model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="transformers.CLIPTextModel.config_class">
+<code class="sig-name descname">config_class</code><a class="headerlink" href="#transformers.CLIPTextModel.config_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">transformers.models.clip.configuration_clip.CLIPTextConfig</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.delete_adapter">
+<code class="sig-name descname">delete_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.delete_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the adapter with the specified name from the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.delete_adapter_fusion">
+<code class="sig-name descname">delete_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>transformers.adapters.composition.Fuse<span class="p">, </span>list<span class="p">, </span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.delete_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the AdapterFusion layer of the specified adapters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_names</strong> (<em>Union</em><em>[</em><em>Fuse</em><em>, </em><em>list</em><em>, </em><em>str</em><em>]</em>) – AdapterFusion layer to delete.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.delete_embeddings">
+<code class="sig-name descname">delete_embeddings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.delete_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the embedding with the given name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the embedding that should be deleted</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.eject_prefix_tuning">
+<code class="sig-name descname">eject_prefix_tuning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.eject_prefix_tuning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the prefix tuning with the given name from the reparameterized form into the flat form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of the prefix tuning.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_ids</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.Tensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attention_mask</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.Tensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">position_ids</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.Tensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_attentions</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_hidden_states</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_dict</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>Tuple<span class="p">, </span>transformers.modeling_outputs.BaseModelOutputWithPooling<span class="p">]</span><a class="headerlink" href="#transformers.CLIPTextModel.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>The [<cite>CLIPTextModel</cite>] forward method, overrides the <cite>__call__</cite> special method.</p>
+<p>&lt;Tip&gt;</p>
+<p>Although the recipe for forward pass needs to be defined within this function, one should call the [<cite>Module</cite>]
+instance afterwards instead of this since the former takes care of running the pre and post processing steps while
+the latter silently ignores them.</p>
+<p>&lt;/Tip&gt;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_ids</strong> (<cite>torch.LongTensor</cite> of shape <cite>(batch_size, sequence_length)</cite>) – <p>Indices of input sequence tokens in the vocabulary. Padding will be ignored by default should you provide
+it.</p>
+<p>Indices can be obtained using [<cite>AutoTokenizer</cite>]. See [<cite>PreTrainedTokenizer.encode</cite>] and
+[<cite>PreTrainedTokenizer.__call__</cite>] for details.</p>
+<p>[What are input IDs?](../glossary#input-ids)</p>
+</p></li>
+<li><p><strong>attention_mask</strong> (<cite>torch.Tensor</cite> of shape <cite>(batch_size, sequence_length)</cite>, <em>optional</em>) – <p>Mask to avoid performing attention on padding token indices. Mask values selected in <cite>[0, 1]</cite>:</p>
+<ul>
+<li><p>1 for tokens that are <strong>not masked</strong>,</p></li>
+<li><p>0 for tokens that are <strong>masked</strong>.</p></li>
+</ul>
+<p>[What are attention masks?](../glossary#attention-mask)</p>
+</p></li>
+<li><p><strong>position_ids</strong> (<cite>torch.LongTensor</cite> of shape <cite>(batch_size, sequence_length)</cite>, <em>optional</em>) – <p>Indices of positions of each input sequence tokens in the position embeddings. Selected in the range <cite>[0,
+config.max_position_embeddings - 1]</cite>.</p>
+<p>[What are position IDs?](../glossary#position-ids)</p>
+</p></li>
+<li><p><strong>output_attentions</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the attentions tensors of all attention layers. See <cite>attentions</cite> under returned
+tensors for more detail.</p></li>
+<li><p><strong>output_hidden_states</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the hidden states of all layers. See <cite>hidden_states</cite> under returned tensors for
+more detail.</p></li>
+<li><p><strong>return_dict</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return a [<cite>~utils.ModelOutput</cite>] instead of a plain tuple.</p></li>
+<li><p><strong>Returns</strong> – <p>[<cite>transformers.modeling_outputs.BaseModelOutputWithPooling</cite>] or <cite>tuple(torch.FloatTensor)</cite>: A [<cite>transformers.modeling_outputs.BaseModelOutputWithPooling</cite>] or a tuple of
+<cite>torch.FloatTensor</cite> (if <cite>return_dict=False</cite> is passed or when <cite>config.return_dict=False</cite>) comprising various
+elements depending on the configuration ([<cite>&lt;class ‘transformers.models.clip.configuration_clip.CLIPTextConfig’&gt;</cite>]) and inputs.</p>
+<ul>
+<li><p><strong>last_hidden_state</strong> (<cite>torch.FloatTensor</cite> of shape <cite>(batch_size, sequence_length, hidden_size)</cite>) – Sequence of hidden-states at the output of the last layer of the model.</p></li>
+<li><p><strong>pooler_output</strong> (<cite>torch.FloatTensor</cite> of shape <cite>(batch_size, hidden_size)</cite>) – Last layer hidden-state of the first token of the sequence (classification token) after further processing
+through the layers used for the auxiliary pretraining task. E.g. for BERT-family of models, this returns
+the classification token after processing through a linear layer and a tanh activation function. The linear
+layer weights are trained from the next sentence prediction (classification) objective during pretraining.</p></li>
+<li><p><strong>hidden_states</strong> (<cite>tuple(torch.FloatTensor)</cite>, <em>optional</em>, returned when <cite>output_hidden_states=True</cite> is passed or when <cite>config.output_hidden_states=True</cite>) – Tuple of <cite>torch.FloatTensor</cite> (one for the output of the embeddings, if the model has an embedding layer, +
+one for the output of each layer) of shape <cite>(batch_size, sequence_length, hidden_size)</cite>.</p>
+<p>Hidden-states of the model at the output of each layer plus the optional initial embedding outputs.</p>
+</li>
+<li><p><strong>attentions</strong> (<cite>tuple(torch.FloatTensor)</cite>, <em>optional</em>, returned when <cite>output_attentions=True</cite> is passed or when <cite>config.output_attentions=True</cite>) – Tuple of <cite>torch.FloatTensor</cite> (one for each layer) of shape <cite>(batch_size, num_heads, sequence_length,
+sequence_length)</cite>.</p>
+<p>Attentions weights after the attention softmax, used to compute the weighted average in the self-attention
+heads.</p>
+</li>
+</ul>
+</p></li>
+<li><p><strong>Examples</strong> – </p></li>
+<li><p><strong>```python</strong> – </p></li>
+<li><p><strong>from transformers import AutoTokenizer</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>CLIPTextModel</strong> – </p></li>
+<li><p><strong>model = CLIPTextModel.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>tokenizer = AutoTokenizer.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>inputs = tokenizer</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>outputs = model</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>last_hidden_state = outputs.last_hidden_state</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>pooled_output = outputs.pooler_output  # pooled</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>```</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.forward_context">
+<code class="sig-name descname">forward_context</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span><span class="p">:</span> <span class="n">transformers.adapters.context.ForwardContext</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.forward_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is called by the <code class="docutils literal notranslate"><span class="pre">ForwardContext</span></code> at the beginning of the forward pass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.freeze_model">
+<code class="sig-name descname">freeze_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">freeze</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.freeze_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Freezes all weights of the model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.get_adapter">
+<code class="sig-name descname">get_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#transformers.CLIPTextModel.get_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with all weights of the adapter with the specified name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The adapter name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A nested dictionary containing the weights of the adapter. The dictionary is structured as follow:
+{&lt;layer id&gt;: {&lt;module location&gt;: &lt;nn.Module&gt;}}. &lt;layer id&gt; = -1 indicates global/ shared weights.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.get_input_embeddings">
+<code class="sig-name descname">get_input_embeddings</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; torch.nn.modules.module.Module<a class="headerlink" href="#transformers.CLIPTextModel.get_input_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the model’s input embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A torch module mapping vocabulary to hidden states.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>nn.Module</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.iter_layers">
+<code class="sig-name descname">iter_layers</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Iterable<span class="p">[</span>Tuple<span class="p">[</span>int<span class="p">, </span>torch.nn.modules.module.Module<span class="p">]</span><span class="p">]</span><a class="headerlink" href="#transformers.CLIPTextModel.iter_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates over all layers of the model.</p>
+<p>This abstract method has to ne implemented by every implementing model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.load_adapter">
+<code class="sig-name descname">load_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name_or_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>dict<span class="p">, </span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">version</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">load_as</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">leave_out</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">id2label</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#transformers.CLIPTextModel.load_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a pre-trained pytorch adapter module from the local file system or a remote location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_name_or_path</strong> (<em>str</em>) – <p>can be either:</p>
+<ul>
+<li><p>the identifier of a pre-trained task adapter to be loaded from Adapter Hub</p></li>
+<li><p>a path to a directory containing adapter weights saved using <cite>model.saved_adapter()</cite></p></li>
+<li><p>a URL pointing to a zip folder containing a saved adapter module</p></li>
+</ul>
+</p></li>
+<li><p><strong>config</strong> (<em>dict</em><em> or </em><em>str</em><em>, </em><em>optional</em>) – The requested configuration of the adapter.
+If not specified, will be either: - the default adapter config for the requested adapter if specified -
+the global default adapter config</p></li>
+<li><p><strong>version</strong> (<em>str</em><em>, </em><em>optional</em>) – The version of the adapter to be loaded.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The string identifier of the pre-trained model.</p></li>
+<li><p><strong>load_as</strong> (<em>str</em><em>, </em><em>optional</em>) – Load the adapter using this name. By default, the name with which the adapter was
+saved will be used.</p></li>
+<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Identifier of the source(s) from where to load the adapter. Can be:</p>
+<ul>
+<li><p>”ah” (default): search on AdapterHub.</p></li>
+<li><p>”hf”: search on HuggingFace model hub.</p></li>
+<li><p>None: search on all sources</p></li>
+</ul>
+</p></li>
+<li><p><strong>leave_out</strong> – Dynamically drop adapter modules in the specified Transformer layers when loading the adapter.</p></li>
+<li><p><strong>set_active</strong> (<em>bool</em><em>, </em><em>optional</em>) – Set the loaded adapter to be the active one. By default (False), the adapter is loaded but not
+activated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The name with which the adapter was added to the model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.load_adapter_fusion">
+<code class="sig-name descname">load_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_fusion_name_or_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">load_as</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#transformers.CLIPTextModel.load_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a pre-trained AdapterFusion layer from the local file system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_fusion_name_or_path</strong> (<em>str</em>) – a path to a directory containing AdapterFusion weights saved using <cite>model.save_adapter_fusion()</cite>.</p></li>
+<li><p><strong>load_as</strong> (<em>str</em><em>, </em><em>optional</em>) – Load the AdapterFusion using this name.
+By default, the name with which the AdapterFusion layer was saved will be used.</p></li>
+<li><p><strong>set_active</strong> (<em>bool</em><em>, </em><em>optional</em>) – Activate the loaded AdapterFusion. By default (False), the AdapterFusion is loaded but not activated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The name with which the AdapterFusion was added to the model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.load_embeddings">
+<code class="sig-name descname">load_embeddings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.load_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a saved embedding from the given path. If the embedding was saved with a tokenizer it is returned</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – the path to the saved embedding</p></li>
+<li><p><strong>name</strong> – the name the embedding should be loaded as</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: a tokenizer if it ws saved with the embedding otherwise None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.merge_adapter">
+<code class="sig-name descname">merge_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.merge_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges the weights of the given LoRA module with the Transformer weights as described in the paper.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – LoRA module to merge.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.push_adapter_to_hub">
+<code class="sig-name descname">push_adapter_to_hub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repo_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">organization</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">adapterhub_tag</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">datasets_tag</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">local_path</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">commit_message</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">private</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_auth_token</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">overwrite_adapter_card</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">create_pr</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">adapter_card_kwargs</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.push_adapter_to_hub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload an adapter to HuggingFace’s Model Hub.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>repo_name</strong> (<em>str</em>) – The name of the repository on the model hub to upload to.</p></li>
+<li><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter to be uploaded.</p></li>
+<li><p><strong>organization</strong> (<em>str</em><em>, </em><em>optional</em>) – Organization in which to push the adapter
+(you must be a member of this organization). Defaults to None.</p></li>
+<li><p><strong>adapterhub_tag</strong> (<em>str</em><em>, </em><em>optional</em>) – Tag of the format <cite>&lt;task&gt;/&lt;subtask&gt;</cite> for categorization on <a class="reference external" href="https://adapterhub.ml/explore/">https://adapterhub.ml/explore/</a>. See
+<a class="reference external" href="https://docs.adapterhub.ml/contributing.html#add-a-new-task-or-subtask">https://docs.adapterhub.ml/contributing.html#add-a-new-task-or-subtask</a> for more. If not specified,
+<cite>datasets_tag</cite> must be given in case a new adapter card is generated. Defaults to None.</p></li>
+<li><p><strong>datasets_tag</strong> (<em>str</em><em>, </em><em>optional</em>) – Dataset identifier from <a class="reference external" href="https://huggingface.co/datasets">https://huggingface.co/datasets</a>.
+If not specified, <cite>adapterhub_tag</cite> must be given in case a new adapter card is generated. Defaults to
+None.</p></li>
+<li><p><strong>local_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Local path used as clone directory of the adapter repository.
+If not specified, will create a temporary directory. Defaults to None.</p></li>
+<li><p><strong>commit_message</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <cite>optional</cite>) – Message to commit while pushing. Will default to <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add</span> <span class="pre">config&quot;</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add</span> <span class="pre">tokenizer&quot;</span></code> or
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add</span> <span class="pre">model&quot;</span></code> depending on the type of the class.</p></li>
+<li><p><strong>private</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, <cite>optional</cite>) – Whether or not the repository created should be private (requires a paying subscription).</p></li>
+<li><p><strong>use_auth_token</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <cite>optional</cite>) – The token to use as HTTP bearer authorization for remote files. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, will use the token
+generated when running <code class="xref py py-obj docutils literal notranslate"><span class="pre">transformers-cli</span> <span class="pre">login</span></code> (stored in <code class="xref py py-obj docutils literal notranslate"><span class="pre">huggingface</span></code>). Defaults to
+True.</p></li>
+<li><p><strong>overwrite_adapter_card</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overwrite an existing adapter card with a newly generated one.
+If set to <cite>False</cite>, will only generate an adapter card, if none exists. Defaults to False.</p></li>
+<li><p><strong>create_pr</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not to create a PR with the uploaded files or directly commit.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The url of the adapter repository on the model hub.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.reset_adapter">
+<code class="sig-name descname">reset_adapter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.reset_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets weights of a LoRA module merged using <cite>model.merge_adapter(name)</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.save_adapter">
+<code class="sig-name descname">save_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.save_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves an adapter and its configuration file to a directory so that it can be shared or reloaded using
+<cite>load_adapter()</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the adapter should be saved.</p></li>
+<li><p><strong>adapter_name</strong> (<em>str</em>) – Name of the adapter to be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the given adapter name is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.save_adapter_fusion">
+<code class="sig-name descname">save_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>transformers.adapters.composition.Fuse<span class="p">, </span>list<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.save_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves an AdapterFusion layer and its configuration file to a directory so that it can be shared or reloaded
+using <cite>load_adapter_fusion()</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the AdapterFusion should be saved.</p></li>
+<li><p><strong>adapter_names</strong> (<em>Union</em><em>[</em><em>Fuse</em><em>, </em><em>list</em><em>, </em><em>str</em><em>]</em>) – AdapterFusion to be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the given AdapterFusion name is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.save_all_adapter_fusions">
+<code class="sig-name descname">save_all_adapter_fusions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.save_all_adapter_fusions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves all AdapterFusion layers of this model together with their configuration to subfolders of the given
+location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the AdapterFusion layers should be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.save_all_adapters">
+<code class="sig-name descname">save_all_adapters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.save_all_adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves all adapters of this model together with their configuration to subfolders of the given location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the adapters should be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.save_embeddings">
+<code class="sig-name descname">save_embeddings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">tokenizer</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.save_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the embedding with the given name. If a tokenizer is passed as well the tokenizer is saved together with
+the embedding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – The path where the embedding should be saved</p></li>
+<li><p><strong>name</strong> – The name of the embedding that should be saved</p></li>
+<li><p><strong>tokenizer</strong> – optionally a tokenizer to save with the embedding (default is None)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.set_active_adapters">
+<code class="sig-name descname">set_active_adapters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">skip_layers</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.set_active_adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the adapter modules to be used by default in every forward pass. If no adapter with the given name is
+found, no module of the respective type will be activated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_setup</strong> (<em>list</em>) – The list of adapters to be activated by default. Can be a fusion or stacking configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.set_active_embeddings">
+<code class="sig-name descname">set_active_embeddings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.set_active_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the active embedding for the forward pass of the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the embedding that should be used</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.set_input_embeddings">
+<code class="sig-name descname">set_input_embeddings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.set_input_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set model’s input embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<cite>nn.Module</cite>) – A module mapping vocabulary to hidden states.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.train_adapter">
+<code class="sig-name descname">train_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">train_embeddings</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.train_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the model into mode for training the given adapters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.train_adapter_fusion">
+<code class="sig-name descname">train_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">unfreeze_adapters</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.train_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the model into mode for training of adapter fusion determined by a list of adapter names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPTextModel.train_fusion">
+<code class="sig-name descname">train_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">unfreeze_adapters</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPTextModel.train_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the model into mode for training of adapter fusion determined by a list of adapter names.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="clipvisionmodel">
+<h2>CLIPVisionModel<a class="headerlink" href="#clipvisionmodel" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="transformers.CLIPVisionModel">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.</code><code class="sig-name descname">CLIPVisionModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">transformers.models.clip.configuration_clip.CLIPVisionConfig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>The vision model from CLIP without any head or projection on top.
+This model inherits from [<cite>PreTrainedModel</cite>]. Check the superclass documentation for the generic methods the
+library implements for all its model (such as downloading or saving, resizing the input embeddings, pruning heads
+etc.)</p>
+<p>This model is also a PyTorch [torch.nn.Module](<a class="reference external" href="https://pytorch.org/docs/stable/nn.html#torch.nn.Module">https://pytorch.org/docs/stable/nn.html#torch.nn.Module</a>) subclass.
+Use it as a regular PyTorch Module and refer to the PyTorch documentation for all matter related to general usage
+and behavior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> ([<cite>CLIPConfig</cite>]) – Model configuration class with all the parameters of the model.
+Initializing with a config file does not load the weights associated with the model, only the
+configuration. Check out the [<cite>~PreTrainedModel.from_pretrained</cite>] method to load the model weights.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.adapter_summary">
+<code class="sig-name descname">adapter_summary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">as_dict</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>dict<span class="p">]</span><a class="headerlink" href="#transformers.CLIPVisionModel.adapter_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string summary of all adapters currently added to the model. Each entry in the summary table has the
+following attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>name: the name of the adapter</p></li>
+<li><p>architecture: the architectural base of the adapter</p></li>
+<li><p>#param: the number of parameters of the adapter</p></li>
+<li><p>%param: the number of parameters of the adapter relative to the full model</p></li>
+<li><p>active: whether the adapter is active</p></li>
+<li><p>train: whether the adapter weights are enabled for training</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.add_adapter">
+<code class="sig-name descname">add_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite_ok</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.add_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new adapter module of the specified type to the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter module to be added.</p></li>
+<li><p><strong>config</strong> (<em>str</em><em> or </em><em>dict</em><em> or </em><a class="reference internal" href="../adapter_config.html#transformers.AdapterConfigBase" title="transformers.AdapterConfigBase"><em>AdapterConfigBase</em></a><em>, </em><em>optional</em>) – <p>The adapter configuration, can be either:</p>
+<ul>
+<li><p>the string identifier of a pre-defined configuration dictionary</p></li>
+<li><p>a configuration dictionary specifying the full config</p></li>
+<li><p>if not given, the default configuration for this adapter type will be used</p></li>
+</ul>
+</p></li>
+<li><p><strong>overwrite_ok</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overwrite an adapter with the same name if it exists. By default (False), an</p></li>
+<li><p><strong>is thrown. set_active</strong> (<em>exception</em>) – Set the adapter to be the active one. By default (False),</p></li>
+<li><p><strong>adapter is added but not activated.</strong> (<em>the</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.add_adapter_fusion">
+<code class="sig-name descname">add_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>transformers.adapters.composition.Fuse<span class="p">, </span>list<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite_ok</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.add_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds AdapterFusion to the model with alll the necessary configurations and weight initializations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_names</strong> (<em>Fuse</em><em> or </em><em>list</em><em> or </em><em>str</em>) – <p>AdapterFusion layer to add. Can be either:</p>
+<ul>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">Fuse</span></code> composition block</p></li>
+<li><p>a list of adapter names to fuse</p></li>
+<li><p>a comma-separated string of adapter names to fuse</p></li>
+</ul>
+</p></li>
+<li><p><strong>config</strong> (<em>str</em><em> or </em><em>dict</em>) – <p>adapter fusion configuration, can be either:</p>
+<ul>
+<li><p>a string identifying a pre-defined adapter fusion configuration</p></li>
+<li><p>a dictionary representing the adapter fusion configuration</p></li>
+<li><p>the path to a file containing the adapter fusion configuration</p></li>
+</ul>
+</p></li>
+<li><p><strong>overwrite_ok</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overwrite an AdapterFusion layer with the same name if it exists. By default (False), an exception is
+thrown.</p></li>
+<li><p><strong>set_active</strong> (<em>bool</em><em>, </em><em>optional</em>) – Activate the added AdapterFusion. By default (False), the AdapterFusion is added but not activated.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.apply_to_adapter_layers">
+<code class="sig-name descname">apply_to_adapter_layers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.apply_to_adapter_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a function to all adapter layers of the model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="transformers.CLIPVisionModel.config_class">
+<code class="sig-name descname">config_class</code><a class="headerlink" href="#transformers.CLIPVisionModel.config_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">transformers.models.clip.configuration_clip.CLIPVisionConfig</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.delete_adapter">
+<code class="sig-name descname">delete_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.delete_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the adapter with the specified name from the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.delete_adapter_fusion">
+<code class="sig-name descname">delete_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>transformers.adapters.composition.Fuse<span class="p">, </span>list<span class="p">, </span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.delete_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the AdapterFusion layer of the specified adapters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_names</strong> (<em>Union</em><em>[</em><em>Fuse</em><em>, </em><em>list</em><em>, </em><em>str</em><em>]</em>) – AdapterFusion layer to delete.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.eject_prefix_tuning">
+<code class="sig-name descname">eject_prefix_tuning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.eject_prefix_tuning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the prefix tuning with the given name from the reparameterized form into the flat form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of the prefix tuning.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pixel_values</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.FloatTensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_attentions</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_hidden_states</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_dict</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>Tuple<span class="p">, </span>transformers.modeling_outputs.BaseModelOutputWithPooling<span class="p">]</span><a class="headerlink" href="#transformers.CLIPVisionModel.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>The [<cite>CLIPVisionModel</cite>] forward method, overrides the <cite>__call__</cite> special method.</p>
+<p>&lt;Tip&gt;</p>
+<p>Although the recipe for forward pass needs to be defined within this function, one should call the [<cite>Module</cite>]
+instance afterwards instead of this since the former takes care of running the pre and post processing steps while
+the latter silently ignores them.</p>
+<p>&lt;/Tip&gt;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pixel_values</strong> (<cite>torch.FloatTensor</cite> of shape <cite>(batch_size, num_channels, height, width)</cite>) – Pixel values. Padding will be ignored by default should you provide it. Pixel values can be obtained using
+[<cite>AutoImageProcessor</cite>]. See [<cite>CLIPImageProcessor.__call__</cite>] for details.</p></li>
+<li><p><strong>output_attentions</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the attentions tensors of all attention layers. See <cite>attentions</cite> under returned
+tensors for more detail.</p></li>
+<li><p><strong>output_hidden_states</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the hidden states of all layers. See <cite>hidden_states</cite> under returned tensors for
+more detail.</p></li>
+<li><p><strong>return_dict</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return a [<cite>~utils.ModelOutput</cite>] instead of a plain tuple.</p></li>
+<li><p><strong>Returns</strong> – <p>[<cite>transformers.modeling_outputs.BaseModelOutputWithPooling</cite>] or <cite>tuple(torch.FloatTensor)</cite>: A [<cite>transformers.modeling_outputs.BaseModelOutputWithPooling</cite>] or a tuple of
+<cite>torch.FloatTensor</cite> (if <cite>return_dict=False</cite> is passed or when <cite>config.return_dict=False</cite>) comprising various
+elements depending on the configuration ([<cite>&lt;class ‘transformers.models.clip.configuration_clip.CLIPVisionConfig’&gt;</cite>]) and inputs.</p>
+<ul>
+<li><p><strong>last_hidden_state</strong> (<cite>torch.FloatTensor</cite> of shape <cite>(batch_size, sequence_length, hidden_size)</cite>) – Sequence of hidden-states at the output of the last layer of the model.</p></li>
+<li><p><strong>pooler_output</strong> (<cite>torch.FloatTensor</cite> of shape <cite>(batch_size, hidden_size)</cite>) – Last layer hidden-state of the first token of the sequence (classification token) after further processing
+through the layers used for the auxiliary pretraining task. E.g. for BERT-family of models, this returns
+the classification token after processing through a linear layer and a tanh activation function. The linear
+layer weights are trained from the next sentence prediction (classification) objective during pretraining.</p></li>
+<li><p><strong>hidden_states</strong> (<cite>tuple(torch.FloatTensor)</cite>, <em>optional</em>, returned when <cite>output_hidden_states=True</cite> is passed or when <cite>config.output_hidden_states=True</cite>) – Tuple of <cite>torch.FloatTensor</cite> (one for the output of the embeddings, if the model has an embedding layer, +
+one for the output of each layer) of shape <cite>(batch_size, sequence_length, hidden_size)</cite>.</p>
+<p>Hidden-states of the model at the output of each layer plus the optional initial embedding outputs.</p>
+</li>
+<li><p><strong>attentions</strong> (<cite>tuple(torch.FloatTensor)</cite>, <em>optional</em>, returned when <cite>output_attentions=True</cite> is passed or when <cite>config.output_attentions=True</cite>) – Tuple of <cite>torch.FloatTensor</cite> (one for each layer) of shape <cite>(batch_size, num_heads, sequence_length,
+sequence_length)</cite>.</p>
+<p>Attentions weights after the attention softmax, used to compute the weighted average in the self-attention
+heads.</p>
+</li>
+</ul>
+</p></li>
+<li><p><strong>Examples</strong> – </p></li>
+<li><p><strong>```python</strong> – </p></li>
+<li><p><strong>from PIL import Image</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>import requests</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>from transformers import AutoProcessor</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>CLIPVisionModel</strong> – </p></li>
+<li><p><strong>model = CLIPVisionModel.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>processor = AutoProcessor.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>url = &quot;http</strong> (<em>&gt;&gt;&gt;</em>) – //images.cocodataset.org/val2017/000000039769.jpg”</p></li>
+<li><p><strong>image = Image.open</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>inputs = processor</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>outputs = model</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>last_hidden_state = outputs.last_hidden_state</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>pooled_output = outputs.pooler_output  # pooled CLS states</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>```</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.forward_context">
+<code class="sig-name descname">forward_context</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span><span class="p">:</span> <span class="n">transformers.adapters.context.ForwardContext</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.forward_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is called by the <code class="docutils literal notranslate"><span class="pre">ForwardContext</span></code> at the beginning of the forward pass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.freeze_model">
+<code class="sig-name descname">freeze_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">freeze</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.freeze_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Freezes all weights of the model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.get_adapter">
+<code class="sig-name descname">get_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#transformers.CLIPVisionModel.get_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with all weights of the adapter with the specified name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The adapter name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A nested dictionary containing the weights of the adapter. The dictionary is structured as follow:
+{&lt;layer id&gt;: {&lt;module location&gt;: &lt;nn.Module&gt;}}. &lt;layer id&gt; = -1 indicates global/ shared weights.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.get_input_embeddings">
+<code class="sig-name descname">get_input_embeddings</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; torch.nn.modules.module.Module<a class="headerlink" href="#transformers.CLIPVisionModel.get_input_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the model’s input embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A torch module mapping vocabulary to hidden states.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>nn.Module</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.iter_layers">
+<code class="sig-name descname">iter_layers</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Iterable<span class="p">[</span>Tuple<span class="p">[</span>int<span class="p">, </span>torch.nn.modules.module.Module<span class="p">]</span><span class="p">]</span><a class="headerlink" href="#transformers.CLIPVisionModel.iter_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates over all layers of the model.</p>
+<p>This abstract method has to ne implemented by every implementing model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.load_adapter">
+<code class="sig-name descname">load_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name_or_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>dict<span class="p">, </span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">version</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">load_as</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">leave_out</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">id2label</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#transformers.CLIPVisionModel.load_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a pre-trained pytorch adapter module from the local file system or a remote location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_name_or_path</strong> (<em>str</em>) – <p>can be either:</p>
+<ul>
+<li><p>the identifier of a pre-trained task adapter to be loaded from Adapter Hub</p></li>
+<li><p>a path to a directory containing adapter weights saved using <cite>model.saved_adapter()</cite></p></li>
+<li><p>a URL pointing to a zip folder containing a saved adapter module</p></li>
+</ul>
+</p></li>
+<li><p><strong>config</strong> (<em>dict</em><em> or </em><em>str</em><em>, </em><em>optional</em>) – The requested configuration of the adapter.
+If not specified, will be either: - the default adapter config for the requested adapter if specified -
+the global default adapter config</p></li>
+<li><p><strong>version</strong> (<em>str</em><em>, </em><em>optional</em>) – The version of the adapter to be loaded.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The string identifier of the pre-trained model.</p></li>
+<li><p><strong>load_as</strong> (<em>str</em><em>, </em><em>optional</em>) – Load the adapter using this name. By default, the name with which the adapter was
+saved will be used.</p></li>
+<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Identifier of the source(s) from where to load the adapter. Can be:</p>
+<ul>
+<li><p>”ah” (default): search on AdapterHub.</p></li>
+<li><p>”hf”: search on HuggingFace model hub.</p></li>
+<li><p>None: search on all sources</p></li>
+</ul>
+</p></li>
+<li><p><strong>leave_out</strong> – Dynamically drop adapter modules in the specified Transformer layers when loading the adapter.</p></li>
+<li><p><strong>set_active</strong> (<em>bool</em><em>, </em><em>optional</em>) – Set the loaded adapter to be the active one. By default (False), the adapter is loaded but not
+activated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The name with which the adapter was added to the model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.load_adapter_fusion">
+<code class="sig-name descname">load_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_fusion_name_or_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">load_as</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#transformers.CLIPVisionModel.load_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a pre-trained AdapterFusion layer from the local file system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_fusion_name_or_path</strong> (<em>str</em>) – a path to a directory containing AdapterFusion weights saved using <cite>model.save_adapter_fusion()</cite>.</p></li>
+<li><p><strong>load_as</strong> (<em>str</em><em>, </em><em>optional</em>) – Load the AdapterFusion using this name.
+By default, the name with which the AdapterFusion layer was saved will be used.</p></li>
+<li><p><strong>set_active</strong> (<em>bool</em><em>, </em><em>optional</em>) – Activate the loaded AdapterFusion. By default (False), the AdapterFusion is loaded but not activated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The name with which the AdapterFusion was added to the model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.merge_adapter">
+<code class="sig-name descname">merge_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.merge_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges the weights of the given LoRA module with the Transformer weights as described in the paper.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – LoRA module to merge.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.push_adapter_to_hub">
+<code class="sig-name descname">push_adapter_to_hub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repo_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">organization</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">adapterhub_tag</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">datasets_tag</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">local_path</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">commit_message</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">private</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_auth_token</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">overwrite_adapter_card</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">create_pr</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">adapter_card_kwargs</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.push_adapter_to_hub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload an adapter to HuggingFace’s Model Hub.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>repo_name</strong> (<em>str</em>) – The name of the repository on the model hub to upload to.</p></li>
+<li><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter to be uploaded.</p></li>
+<li><p><strong>organization</strong> (<em>str</em><em>, </em><em>optional</em>) – Organization in which to push the adapter
+(you must be a member of this organization). Defaults to None.</p></li>
+<li><p><strong>adapterhub_tag</strong> (<em>str</em><em>, </em><em>optional</em>) – Tag of the format <cite>&lt;task&gt;/&lt;subtask&gt;</cite> for categorization on <a class="reference external" href="https://adapterhub.ml/explore/">https://adapterhub.ml/explore/</a>. See
+<a class="reference external" href="https://docs.adapterhub.ml/contributing.html#add-a-new-task-or-subtask">https://docs.adapterhub.ml/contributing.html#add-a-new-task-or-subtask</a> for more. If not specified,
+<cite>datasets_tag</cite> must be given in case a new adapter card is generated. Defaults to None.</p></li>
+<li><p><strong>datasets_tag</strong> (<em>str</em><em>, </em><em>optional</em>) – Dataset identifier from <a class="reference external" href="https://huggingface.co/datasets">https://huggingface.co/datasets</a>.
+If not specified, <cite>adapterhub_tag</cite> must be given in case a new adapter card is generated. Defaults to
+None.</p></li>
+<li><p><strong>local_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Local path used as clone directory of the adapter repository.
+If not specified, will create a temporary directory. Defaults to None.</p></li>
+<li><p><strong>commit_message</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <cite>optional</cite>) – Message to commit while pushing. Will default to <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add</span> <span class="pre">config&quot;</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add</span> <span class="pre">tokenizer&quot;</span></code> or
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add</span> <span class="pre">model&quot;</span></code> depending on the type of the class.</p></li>
+<li><p><strong>private</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, <cite>optional</cite>) – Whether or not the repository created should be private (requires a paying subscription).</p></li>
+<li><p><strong>use_auth_token</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <cite>optional</cite>) – The token to use as HTTP bearer authorization for remote files. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, will use the token
+generated when running <code class="xref py py-obj docutils literal notranslate"><span class="pre">transformers-cli</span> <span class="pre">login</span></code> (stored in <code class="xref py py-obj docutils literal notranslate"><span class="pre">huggingface</span></code>). Defaults to
+True.</p></li>
+<li><p><strong>overwrite_adapter_card</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overwrite an existing adapter card with a newly generated one.
+If set to <cite>False</cite>, will only generate an adapter card, if none exists. Defaults to False.</p></li>
+<li><p><strong>create_pr</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not to create a PR with the uploaded files or directly commit.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The url of the adapter repository on the model hub.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.reset_adapter">
+<code class="sig-name descname">reset_adapter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.reset_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets weights of a LoRA module merged using <cite>model.merge_adapter(name)</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.save_adapter">
+<code class="sig-name descname">save_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.save_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves an adapter and its configuration file to a directory so that it can be shared or reloaded using
+<cite>load_adapter()</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the adapter should be saved.</p></li>
+<li><p><strong>adapter_name</strong> (<em>str</em>) – Name of the adapter to be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the given adapter name is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.save_adapter_fusion">
+<code class="sig-name descname">save_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>transformers.adapters.composition.Fuse<span class="p">, </span>list<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.save_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves an AdapterFusion layer and its configuration file to a directory so that it can be shared or reloaded
+using <cite>load_adapter_fusion()</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the AdapterFusion should be saved.</p></li>
+<li><p><strong>adapter_names</strong> (<em>Union</em><em>[</em><em>Fuse</em><em>, </em><em>list</em><em>, </em><em>str</em><em>]</em>) – AdapterFusion to be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the given AdapterFusion name is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.save_all_adapter_fusions">
+<code class="sig-name descname">save_all_adapter_fusions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.save_all_adapter_fusions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves all AdapterFusion layers of this model together with their configuration to subfolders of the given
+location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the AdapterFusion layers should be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.save_all_adapters">
+<code class="sig-name descname">save_all_adapters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.save_all_adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves all adapters of this model together with their configuration to subfolders of the given location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the adapters should be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.set_active_adapters">
+<code class="sig-name descname">set_active_adapters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">skip_layers</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.set_active_adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the adapter modules to be used by default in every forward pass. If no adapter with the given name is
+found, no module of the respective type will be activated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_setup</strong> (<em>list</em>) – The list of adapters to be activated by default. Can be a fusion or stacking configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.train_adapter">
+<code class="sig-name descname">train_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">train_embeddings</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.train_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the model into mode for training the given adapters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.train_adapter_fusion">
+<code class="sig-name descname">train_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">unfreeze_adapters</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.train_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the model into mode for training of adapter fusion determined by a list of adapter names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPVisionModel.train_fusion">
+<code class="sig-name descname">train_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">unfreeze_adapters</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPVisionModel.train_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the model into mode for training of adapter fusion determined by a list of adapter names.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="clipmodel">
+<h2>CLIPModel<a class="headerlink" href="#clipmodel" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="transformers.CLIPModel">
+<em class="property">class </em><code class="sig-prename descclassname">transformers.</code><code class="sig-name descname">CLIPModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">transformers.models.clip.configuration_clip.CLIPConfig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>This model inherits from [<cite>PreTrainedModel</cite>]. Check the superclass documentation for the generic methods the
+library implements for all its model (such as downloading or saving, resizing the input embeddings, pruning heads
+etc.)</p>
+<p>This model is also a PyTorch [torch.nn.Module](<a class="reference external" href="https://pytorch.org/docs/stable/nn.html#torch.nn.Module">https://pytorch.org/docs/stable/nn.html#torch.nn.Module</a>) subclass.
+Use it as a regular PyTorch Module and refer to the PyTorch documentation for all matter related to general usage
+and behavior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> ([<cite>CLIPConfig</cite>]) – Model configuration class with all the parameters of the model.
+Initializing with a config file does not load the weights associated with the model, only the
+configuration. Check out the [<cite>~PreTrainedModel.from_pretrained</cite>] method to load the model weights.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="transformers.CLIPModel.adapter_summary">
+<code class="sig-name descname">adapter_summary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">as_dict</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>str<span class="p">, </span>dict<span class="p">]</span><a class="headerlink" href="#transformers.CLIPModel.adapter_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string summary of all adapters currently added to the model. Each entry in the summary table has the
+following attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>name: the name of the adapter</p></li>
+<li><p>architecture: the architectural base of the adapter</p></li>
+<li><p>#param: the number of parameters of the adapter</p></li>
+<li><p>%param: the number of parameters of the adapter relative to the full model</p></li>
+<li><p>active: whether the adapter is active</p></li>
+<li><p>train: whether the adapter weights are enabled for training</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.add_adapter">
+<code class="sig-name descname">add_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite_ok</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.add_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new adapter module of the specified type to the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter module to be added.</p></li>
+<li><p><strong>config</strong> (<em>str</em><em> or </em><em>dict</em><em> or </em><a class="reference internal" href="../adapter_config.html#transformers.AdapterConfigBase" title="transformers.AdapterConfigBase"><em>AdapterConfigBase</em></a><em>, </em><em>optional</em>) – <p>The adapter configuration, can be either:</p>
+<ul>
+<li><p>the string identifier of a pre-defined configuration dictionary</p></li>
+<li><p>a configuration dictionary specifying the full config</p></li>
+<li><p>if not given, the default configuration for this adapter type will be used</p></li>
+</ul>
+</p></li>
+<li><p><strong>overwrite_ok</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overwrite an adapter with the same name if it exists. By default (False), an</p></li>
+<li><p><strong>is thrown. set_active</strong> (<em>exception</em>) – Set the adapter to be the active one. By default (False),</p></li>
+<li><p><strong>adapter is added but not activated.</strong> (<em>the</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.add_adapter_fusion">
+<code class="sig-name descname">add_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>transformers.adapters.composition.Fuse<span class="p">, </span>list<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite_ok</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.add_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds AdapterFusion to the model with alll the necessary configurations and weight initializations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_names</strong> (<em>Fuse</em><em> or </em><em>list</em><em> or </em><em>str</em>) – <p>AdapterFusion layer to add. Can be either:</p>
+<ul>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">Fuse</span></code> composition block</p></li>
+<li><p>a list of adapter names to fuse</p></li>
+<li><p>a comma-separated string of adapter names to fuse</p></li>
+</ul>
+</p></li>
+<li><p><strong>config</strong> (<em>str</em><em> or </em><em>dict</em>) – <p>adapter fusion configuration, can be either:</p>
+<ul>
+<li><p>a string identifying a pre-defined adapter fusion configuration</p></li>
+<li><p>a dictionary representing the adapter fusion configuration</p></li>
+<li><p>the path to a file containing the adapter fusion configuration</p></li>
+</ul>
+</p></li>
+<li><p><strong>overwrite_ok</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overwrite an AdapterFusion layer with the same name if it exists. By default (False), an exception is
+thrown.</p></li>
+<li><p><strong>set_active</strong> (<em>bool</em><em>, </em><em>optional</em>) – Activate the added AdapterFusion. By default (False), the AdapterFusion is added but not activated.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.add_invertible_adapter">
+<code class="sig-name descname">add_invertible_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.add_invertible_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an invertible adapter module for the adapter with the given name. If the given adapter does not specify an
+invertible adapter config, this method does nothing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter for which to add an invertible adapter module.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.apply_to_adapter_layers">
+<code class="sig-name descname">apply_to_adapter_layers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.apply_to_adapter_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a function to all adapter layers of the model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="transformers.CLIPModel.config_class">
+<code class="sig-name descname">config_class</code><a class="headerlink" href="#transformers.CLIPModel.config_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">transformers.models.clip.configuration_clip.CLIPConfig</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.delete_adapter">
+<code class="sig-name descname">delete_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.delete_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the adapter with the specified name from the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.delete_adapter_fusion">
+<code class="sig-name descname">delete_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>transformers.adapters.composition.Fuse<span class="p">, </span>list<span class="p">, </span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.delete_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the AdapterFusion layer of the specified adapters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_names</strong> (<em>Union</em><em>[</em><em>Fuse</em><em>, </em><em>list</em><em>, </em><em>str</em><em>]</em>) – AdapterFusion layer to delete.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.eject_prefix_tuning">
+<code class="sig-name descname">eject_prefix_tuning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.eject_prefix_tuning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the prefix tuning with the given name from the reparameterized form into the flat form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of the prefix tuning.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_ids</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.LongTensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pixel_values</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.FloatTensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attention_mask</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.Tensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">position_ids</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.LongTensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_loss</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_attentions</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_hidden_states</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_dict</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>Tuple<span class="p">, </span>transformers.models.clip.modeling_clip.CLIPOutput<span class="p">]</span><a class="headerlink" href="#transformers.CLIPModel.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>The [<cite>CLIPModel</cite>] forward method, overrides the <cite>__call__</cite> special method.</p>
+<p>&lt;Tip&gt;</p>
+<p>Although the recipe for forward pass needs to be defined within this function, one should call the [<cite>Module</cite>]
+instance afterwards instead of this since the former takes care of running the pre and post processing steps while
+the latter silently ignores them.</p>
+<p>&lt;/Tip&gt;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_ids</strong> (<cite>torch.LongTensor</cite> of shape <cite>(batch_size, sequence_length)</cite>) – <p>Indices of input sequence tokens in the vocabulary. Padding will be ignored by default should you provide
+it.</p>
+<p>Indices can be obtained using [<cite>AutoTokenizer</cite>]. See [<cite>PreTrainedTokenizer.encode</cite>] and
+[<cite>PreTrainedTokenizer.__call__</cite>] for details.</p>
+<p>[What are input IDs?](../glossary#input-ids)</p>
+</p></li>
+<li><p><strong>attention_mask</strong> (<cite>torch.Tensor</cite> of shape <cite>(batch_size, sequence_length)</cite>, <em>optional</em>) – <p>Mask to avoid performing attention on padding token indices. Mask values selected in <cite>[0, 1]</cite>:</p>
+<ul>
+<li><p>1 for tokens that are <strong>not masked</strong>,</p></li>
+<li><p>0 for tokens that are <strong>masked</strong>.</p></li>
+</ul>
+<p>[What are attention masks?](../glossary#attention-mask)</p>
+</p></li>
+<li><p><strong>position_ids</strong> (<cite>torch.LongTensor</cite> of shape <cite>(batch_size, sequence_length)</cite>, <em>optional</em>) – <p>Indices of positions of each input sequence tokens in the position embeddings. Selected in the range <cite>[0,
+config.max_position_embeddings - 1]</cite>.</p>
+<p>[What are position IDs?](../glossary#position-ids)</p>
+</p></li>
+<li><p><strong>pixel_values</strong> (<cite>torch.FloatTensor</cite> of shape <cite>(batch_size, num_channels, height, width)</cite>) – Pixel values. Padding will be ignored by default should you provide it. Pixel values can be obtained using
+[<cite>AutoImageProcessor</cite>]. See [<cite>CLIPImageProcessor.__call__</cite>] for details.</p></li>
+<li><p><strong>return_loss</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the contrastive loss.</p></li>
+<li><p><strong>output_attentions</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the attentions tensors of all attention layers. See <cite>attentions</cite> under returned
+tensors for more detail.</p></li>
+<li><p><strong>output_hidden_states</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the hidden states of all layers. See <cite>hidden_states</cite> under returned tensors for
+more detail.</p></li>
+<li><p><strong>return_dict</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return a [<cite>~utils.ModelOutput</cite>] instead of a plain tuple.</p></li>
+<li><p><strong>Returns</strong> – <p>[<cite>transformers.models.clip.modeling_clip.CLIPOutput</cite>] or <cite>tuple(torch.FloatTensor)</cite>: A [<cite>transformers.models.clip.modeling_clip.CLIPOutput</cite>] or a tuple of
+<cite>torch.FloatTensor</cite> (if <cite>return_dict=False</cite> is passed or when <cite>config.return_dict=False</cite>) comprising various
+elements depending on the configuration ([<cite>&lt;class ‘transformers.models.clip.configuration_clip.CLIPConfig’&gt;</cite>]) and inputs.</p>
+<ul>
+<li><p><strong>loss</strong> (<cite>torch.FloatTensor</cite> of shape <cite>(1,)</cite>, <em>optional</em>, returned when <cite>return_loss</cite> is <cite>True</cite>) – Contrastive loss for image-text similarity.</p></li>
+<li><p><strong>logits_per_image:(`torch.FloatTensor`</strong> of shape <cite>(image_batch_size, text_batch_size)</cite>) – The scaled dot product scores between <cite>image_embeds</cite> and <cite>text_embeds</cite>. This represents the image-text
+similarity scores.</p></li>
+<li><p><strong>logits_per_text:(`torch.FloatTensor`</strong> of shape <cite>(text_batch_size, image_batch_size)</cite>) – The scaled dot product scores between <cite>text_embeds</cite> and <cite>image_embeds</cite>. This represents the text-image
+similarity scores.</p></li>
+<li><p><strong>text_embeds(`torch.FloatTensor`</strong> of shape <cite>(batch_size, output_dim</cite>) – The text embeddings obtained by applying the projection layer to the pooled output of [<cite>CLIPTextModel</cite>].</p></li>
+<li><p><strong>image_embeds(`torch.FloatTensor`</strong> of shape <cite>(batch_size, output_dim</cite>) – The image embeddings obtained by applying the projection layer to the pooled output of [<cite>CLIPVisionModel</cite>].</p></li>
+<li><p><strong>text_model_output(`BaseModelOutputWithPooling`):</strong>
+The output of the [<cite>CLIPTextModel</cite>].</p></li>
+<li><p><strong>vision_model_output(`BaseModelOutputWithPooling`):</strong>
+The output of the [<cite>CLIPVisionModel</cite>].</p></li>
+</ul>
+</p></li>
+<li><p><strong>Examples</strong> – </p></li>
+<li><p><strong>```python</strong> – </p></li>
+<li><p><strong>from PIL import Image</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>import requests</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>from transformers import AutoProcessor</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>CLIPModel</strong> – </p></li>
+<li><p><strong>model = CLIPModel.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>processor = AutoProcessor.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>url = &quot;http</strong> (<em>&gt;&gt;&gt;</em>) – //images.cocodataset.org/val2017/000000039769.jpg”</p></li>
+<li><p><strong>image = Image.open</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>inputs = processor</strong><strong>(</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>text=</strong><strong>[</strong><strong>&quot;a photo of a cat&quot;</strong> (<em>..</em>) – </p></li>
+<li><p><strong>photo of a dog&quot;</strong><strong>]</strong> (<em>&quot;a</em>) – </p></li>
+<li><p><strong>images=image</strong> – </p></li>
+<li><p><strong>return_tensors=&quot;pt&quot;</strong> – </p></li>
+<li><p><strong>padding=True</strong> – </p></li>
+<li><p><strong>)</strong> (<em>..</em>) – </p></li>
+<li><p><strong>outputs = model</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>logits_per_image = outputs.logits_per_image  # this is the image-text similarity score</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>probs = logits_per_image.softmax</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>```</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.forward_context">
+<code class="sig-name descname">forward_context</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span><span class="p">:</span> <span class="n">transformers.adapters.context.ForwardContext</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.forward_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is called by the <code class="docutils literal notranslate"><span class="pre">ForwardContext</span></code> at the beginning of the forward pass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.freeze_model">
+<code class="sig-name descname">freeze_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">freeze</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.freeze_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Freezes all weights of the model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.get_adapter">
+<code class="sig-name descname">get_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#transformers.CLIPModel.get_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with all weights of the adapter with the specified name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The adapter name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A nested dictionary containing the weights of the adapter. The dictionary is structured as follow:
+{&lt;layer id&gt;: {&lt;module location&gt;: &lt;nn.Module&gt;}}. &lt;layer id&gt; = -1 indicates global/ shared weights.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.get_image_features">
+<code class="sig-name descname">get_image_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pixel_values</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.FloatTensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_attentions</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_hidden_states</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_dict</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; torch.FloatTensor<a class="headerlink" href="#transformers.CLIPModel.get_image_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>The [<cite>CLIPModel</cite>] forward method, overrides the <cite>__call__</cite> special method.</p>
+<p>&lt;Tip&gt;</p>
+<p>Although the recipe for forward pass needs to be defined within this function, one should call the [<cite>Module</cite>]
+instance afterwards instead of this since the former takes care of running the pre and post processing steps while
+the latter silently ignores them.</p>
+<p>&lt;/Tip&gt;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pixel_values</strong> (<cite>torch.FloatTensor</cite> of shape <cite>(batch_size, num_channels, height, width)</cite>) – Pixel values. Padding will be ignored by default should you provide it. Pixel values can be obtained using
+[<cite>AutoImageProcessor</cite>]. See [<cite>CLIPImageProcessor.__call__</cite>] for details.</p></li>
+<li><p><strong>output_attentions</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the attentions tensors of all attention layers. See <cite>attentions</cite> under returned
+tensors for more detail.</p></li>
+<li><p><strong>output_hidden_states</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the hidden states of all layers. See <cite>hidden_states</cite> under returned tensors for
+more detail.</p></li>
+<li><p><strong>return_dict</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return a [<cite>~utils.ModelOutput</cite>] instead of a plain tuple.</p></li>
+<li><p><strong>Returns</strong> – image_features (<cite>torch.FloatTensor</cite> of shape <cite>(batch_size, output_dim</cite>): The image embeddings obtained by
+applying the projection layer to the pooled output of [<cite>CLIPVisionModel</cite>].</p></li>
+<li><p><strong>Examples</strong> – </p></li>
+<li><p><strong>```python</strong> – </p></li>
+<li><p><strong>from PIL import Image</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>import requests</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>from transformers import AutoProcessor</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>CLIPModel</strong> – </p></li>
+<li><p><strong>model = CLIPModel.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>processor = AutoProcessor.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>url = &quot;http</strong> (<em>&gt;&gt;&gt;</em>) – //images.cocodataset.org/val2017/000000039769.jpg”</p></li>
+<li><p><strong>image = Image.open</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>inputs = processor</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>image_features = model.get_image_features</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>```</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.get_text_features">
+<code class="sig-name descname">get_text_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_ids</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.Tensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attention_mask</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.Tensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">position_ids</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>torch.Tensor<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_attentions</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_hidden_states</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_dict</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; torch.FloatTensor<a class="headerlink" href="#transformers.CLIPModel.get_text_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>The [<cite>CLIPModel</cite>] forward method, overrides the <cite>__call__</cite> special method.</p>
+<p>&lt;Tip&gt;</p>
+<p>Although the recipe for forward pass needs to be defined within this function, one should call the [<cite>Module</cite>]
+instance afterwards instead of this since the former takes care of running the pre and post processing steps while
+the latter silently ignores them.</p>
+<p>&lt;/Tip&gt;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_ids</strong> (<cite>torch.LongTensor</cite> of shape <cite>(batch_size, sequence_length)</cite>) – <p>Indices of input sequence tokens in the vocabulary. Padding will be ignored by default should you provide
+it.</p>
+<p>Indices can be obtained using [<cite>AutoTokenizer</cite>]. See [<cite>PreTrainedTokenizer.encode</cite>] and
+[<cite>PreTrainedTokenizer.__call__</cite>] for details.</p>
+<p>[What are input IDs?](../glossary#input-ids)</p>
+</p></li>
+<li><p><strong>attention_mask</strong> (<cite>torch.Tensor</cite> of shape <cite>(batch_size, sequence_length)</cite>, <em>optional</em>) – <p>Mask to avoid performing attention on padding token indices. Mask values selected in <cite>[0, 1]</cite>:</p>
+<ul>
+<li><p>1 for tokens that are <strong>not masked</strong>,</p></li>
+<li><p>0 for tokens that are <strong>masked</strong>.</p></li>
+</ul>
+<p>[What are attention masks?](../glossary#attention-mask)</p>
+</p></li>
+<li><p><strong>position_ids</strong> (<cite>torch.LongTensor</cite> of shape <cite>(batch_size, sequence_length)</cite>, <em>optional</em>) – <p>Indices of positions of each input sequence tokens in the position embeddings. Selected in the range <cite>[0,
+config.max_position_embeddings - 1]</cite>.</p>
+<p>[What are position IDs?](../glossary#position-ids)</p>
+</p></li>
+<li><p><strong>output_attentions</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the attentions tensors of all attention layers. See <cite>attentions</cite> under returned
+tensors for more detail.</p></li>
+<li><p><strong>output_hidden_states</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return the hidden states of all layers. See <cite>hidden_states</cite> under returned tensors for
+more detail.</p></li>
+<li><p><strong>return_dict</strong> (<cite>bool</cite>, <em>optional</em>) – Whether or not to return a [<cite>~utils.ModelOutput</cite>] instead of a plain tuple.</p></li>
+<li><p><strong>Returns</strong> – text_features (<cite>torch.FloatTensor</cite> of shape <cite>(batch_size, output_dim</cite>): The text embeddings obtained by
+applying the projection layer to the pooled output of [<cite>CLIPTextModel</cite>].</p></li>
+<li><p><strong>Examples</strong> – </p></li>
+<li><p><strong>```python</strong> – </p></li>
+<li><p><strong>from transformers import AutoTokenizer</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>CLIPModel</strong> – </p></li>
+<li><p><strong>model = CLIPModel.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>tokenizer = AutoTokenizer.from_pretrained</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>inputs = tokenizer</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>text_features = model.get_text_features</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
+<li><p><strong>```</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.iter_layers">
+<code class="sig-name descname">iter_layers</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Iterable<span class="p">[</span>Tuple<span class="p">[</span>int<span class="p">, </span>torch.nn.modules.module.Module<span class="p">]</span><span class="p">]</span><a class="headerlink" href="#transformers.CLIPModel.iter_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates over all layers of the model.</p>
+<p>This abstract method has to ne implemented by every implementing model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.load_adapter">
+<code class="sig-name descname">load_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_name_or_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>dict<span class="p">, </span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">version</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">load_as</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">leave_out</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">id2label</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#transformers.CLIPModel.load_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a pre-trained pytorch adapter module from the local file system or a remote location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_name_or_path</strong> (<em>str</em>) – <p>can be either:</p>
+<ul>
+<li><p>the identifier of a pre-trained task adapter to be loaded from Adapter Hub</p></li>
+<li><p>a path to a directory containing adapter weights saved using <cite>model.saved_adapter()</cite></p></li>
+<li><p>a URL pointing to a zip folder containing a saved adapter module</p></li>
+</ul>
+</p></li>
+<li><p><strong>config</strong> (<em>dict</em><em> or </em><em>str</em><em>, </em><em>optional</em>) – The requested configuration of the adapter.
+If not specified, will be either: - the default adapter config for the requested adapter if specified -
+the global default adapter config</p></li>
+<li><p><strong>version</strong> (<em>str</em><em>, </em><em>optional</em>) – The version of the adapter to be loaded.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The string identifier of the pre-trained model.</p></li>
+<li><p><strong>load_as</strong> (<em>str</em><em>, </em><em>optional</em>) – Load the adapter using this name. By default, the name with which the adapter was
+saved will be used.</p></li>
+<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Identifier of the source(s) from where to load the adapter. Can be:</p>
+<ul>
+<li><p>”ah” (default): search on AdapterHub.</p></li>
+<li><p>”hf”: search on HuggingFace model hub.</p></li>
+<li><p>None: search on all sources</p></li>
+</ul>
+</p></li>
+<li><p><strong>leave_out</strong> – Dynamically drop adapter modules in the specified Transformer layers when loading the adapter.</p></li>
+<li><p><strong>set_active</strong> (<em>bool</em><em>, </em><em>optional</em>) – Set the loaded adapter to be the active one. By default (False), the adapter is loaded but not
+activated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The name with which the adapter was added to the model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.load_adapter_fusion">
+<code class="sig-name descname">load_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_fusion_name_or_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">load_as</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#transformers.CLIPModel.load_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a pre-trained AdapterFusion layer from the local file system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adapter_fusion_name_or_path</strong> (<em>str</em>) – a path to a directory containing AdapterFusion weights saved using <cite>model.save_adapter_fusion()</cite>.</p></li>
+<li><p><strong>load_as</strong> (<em>str</em><em>, </em><em>optional</em>) – Load the AdapterFusion using this name.
+By default, the name with which the AdapterFusion layer was saved will be used.</p></li>
+<li><p><strong>set_active</strong> (<em>bool</em><em>, </em><em>optional</em>) – Activate the loaded AdapterFusion. By default (False), the AdapterFusion is loaded but not activated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The name with which the AdapterFusion was added to the model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.merge_adapter">
+<code class="sig-name descname">merge_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.merge_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges the weights of the given LoRA module with the Transformer weights as described in the paper.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – LoRA module to merge.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.push_adapter_to_hub">
+<code class="sig-name descname">push_adapter_to_hub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repo_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">organization</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">adapterhub_tag</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">datasets_tag</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">local_path</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">commit_message</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">private</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_auth_token</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">overwrite_adapter_card</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">create_pr</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">adapter_card_kwargs</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.push_adapter_to_hub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload an adapter to HuggingFace’s Model Hub.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>repo_name</strong> (<em>str</em>) – The name of the repository on the model hub to upload to.</p></li>
+<li><p><strong>adapter_name</strong> (<em>str</em>) – The name of the adapter to be uploaded.</p></li>
+<li><p><strong>organization</strong> (<em>str</em><em>, </em><em>optional</em>) – Organization in which to push the adapter
+(you must be a member of this organization). Defaults to None.</p></li>
+<li><p><strong>adapterhub_tag</strong> (<em>str</em><em>, </em><em>optional</em>) – Tag of the format <cite>&lt;task&gt;/&lt;subtask&gt;</cite> for categorization on <a class="reference external" href="https://adapterhub.ml/explore/">https://adapterhub.ml/explore/</a>. See
+<a class="reference external" href="https://docs.adapterhub.ml/contributing.html#add-a-new-task-or-subtask">https://docs.adapterhub.ml/contributing.html#add-a-new-task-or-subtask</a> for more. If not specified,
+<cite>datasets_tag</cite> must be given in case a new adapter card is generated. Defaults to None.</p></li>
+<li><p><strong>datasets_tag</strong> (<em>str</em><em>, </em><em>optional</em>) – Dataset identifier from <a class="reference external" href="https://huggingface.co/datasets">https://huggingface.co/datasets</a>.
+If not specified, <cite>adapterhub_tag</cite> must be given in case a new adapter card is generated. Defaults to
+None.</p></li>
+<li><p><strong>local_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Local path used as clone directory of the adapter repository.
+If not specified, will create a temporary directory. Defaults to None.</p></li>
+<li><p><strong>commit_message</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <cite>optional</cite>) – Message to commit while pushing. Will default to <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add</span> <span class="pre">config&quot;</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add</span> <span class="pre">tokenizer&quot;</span></code> or
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add</span> <span class="pre">model&quot;</span></code> depending on the type of the class.</p></li>
+<li><p><strong>private</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, <cite>optional</cite>) – Whether or not the repository created should be private (requires a paying subscription).</p></li>
+<li><p><strong>use_auth_token</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <cite>optional</cite>) – The token to use as HTTP bearer authorization for remote files. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, will use the token
+generated when running <code class="xref py py-obj docutils literal notranslate"><span class="pre">transformers-cli</span> <span class="pre">login</span></code> (stored in <code class="xref py py-obj docutils literal notranslate"><span class="pre">huggingface</span></code>). Defaults to
+True.</p></li>
+<li><p><strong>overwrite_adapter_card</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overwrite an existing adapter card with a newly generated one.
+If set to <cite>False</cite>, will only generate an adapter card, if none exists. Defaults to False.</p></li>
+<li><p><strong>create_pr</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not to create a PR with the uploaded files or directly commit.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The url of the adapter repository on the model hub.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.reset_adapter">
+<code class="sig-name descname">reset_adapter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.reset_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets weights of a LoRA module merged using <cite>model.merge_adapter(name)</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.save_adapter">
+<code class="sig-name descname">save_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.save_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves an adapter and its configuration file to a directory so that it can be shared or reloaded using
+<cite>load_adapter()</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the adapter should be saved.</p></li>
+<li><p><strong>adapter_name</strong> (<em>str</em>) – Name of the adapter to be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the given adapter name is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.save_adapter_fusion">
+<code class="sig-name descname">save_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter_names</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>transformers.adapters.composition.Fuse<span class="p">, </span>list<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.save_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves an AdapterFusion layer and its configuration file to a directory so that it can be shared or reloaded
+using <cite>load_adapter_fusion()</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the AdapterFusion should be saved.</p></li>
+<li><p><strong>adapter_names</strong> (<em>Union</em><em>[</em><em>Fuse</em><em>, </em><em>list</em><em>, </em><em>str</em><em>]</em>) – AdapterFusion to be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the given AdapterFusion name is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.save_all_adapter_fusions">
+<code class="sig-name descname">save_all_adapter_fusions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.save_all_adapter_fusions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves all AdapterFusion layers of this model together with their configuration to subfolders of the given
+location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the AdapterFusion layers should be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.save_all_adapters">
+<code class="sig-name descname">save_all_adapters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_directory</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">meta_dict</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom_weights_loaders</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>transformers.adapters.loading.WeightsLoader<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.save_all_adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves all adapters of this model together with their configuration to subfolders of the given location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>save_directory</strong> (<em>str</em>) – Path to a directory where the adapters should be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.set_active_adapters">
+<code class="sig-name descname">set_active_adapters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">skip_layers</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.set_active_adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the adapter modules to be used by default in every forward pass. If no adapter with the given name is
+found, no module of the respective type will be activated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>adapter_setup</strong> (<em>list</em>) – The list of adapters to be activated by default. Can be a fusion or stacking configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.train_adapter">
+<code class="sig-name descname">train_adapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">train_embeddings</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.train_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the model into mode for training the given adapters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.train_adapter_fusion">
+<code class="sig-name descname">train_adapter_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">unfreeze_adapters</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.train_adapter_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the model into mode for training of adapter fusion determined by a list of adapter names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="transformers.CLIPModel.train_fusion">
+<code class="sig-name descname">train_fusion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adapter_setup</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>list<span class="p">, </span>transformers.adapters.composition.AdapterCompositionBlock<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">unfreeze_adapters</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformers.CLIPModel.train_fusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the model into mode for training of adapter fusion determined by a list of adapter names.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="deberta.html" class="btn btn-neutral float-right" title="DeBERTa" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bert-generation.html" class="btn btn-neutral float-left" title="BertGeneration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020-2022, Adapter-Hub Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <!--- IMPORTANT: This file has modifications compared to the snippet on the documentation page! -->
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="clip.html">master</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
