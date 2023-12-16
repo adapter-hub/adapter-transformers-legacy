@@ -432,7 +432,7 @@ install_requires = [
 
 setup(
     name="adapter-transformers",
-    version="3.2.1",
+    version="3.2.1.post0",
     author="Jonas Pfeiffer, Andreas Rücklé, Clifton Poth, Hannah Sterz, Leon Engländer, based on work by the HuggingFace team and community",
     author_email="pfeiffer@ukp.tu-darmstadt.de",
     description="A friendly fork of HuggingFace's Transformers, adding Adapters to PyTorch language models",
@@ -451,7 +451,7 @@ setup(
     python_requires=">=3.8.0",
     install_requires=install_requires,
     classifiers=[
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 7 - Inactive",
         "Intended Audience :: Developers",
         "Intended Audience :: Education",
         "Intended Audience :: Science/Research",
