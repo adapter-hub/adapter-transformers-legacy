@@ -59,7 +59,7 @@ jobs:
         run: |
           pip install torch==1.12.1
           pip install .[sklearn,testing,sentencepiece,vision]
-          pip install datasets fsspec<2023.10.0
+          pip install datasets "fsspec<2023.10.0"
       - name: Test
         run: |
           make test-adapter-methods
@@ -81,7 +81,7 @@ jobs:
         run: |
           pip install torch==1.12.1
           pip install .[sklearn,testing,sentencepiece,vision]
-          pip install datasets fsspec<2023.10.0
+          pip install datasets "fsspec<2023.10.0"
       - name: Test
         run: |
           make test-adapter-models
